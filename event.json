@@ -1,0 +1,8 @@
+{
+  "event_id": "evt-001",
+  "username": "admin",
+  "source_ip": "192.168.1.50",
+  "event_type": "login",
+  "status": "failed",
+  "failed_attempts": 5
+}

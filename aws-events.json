@@ -1,0 +1,24 @@
+[
+  {
+    "eventID": "evt-001",
+    "eventTime": "2026-10-29T10:00:00Z",
+    "eventSource": "signin.amazonaws.com",
+    "eventName": "ConsoleLogin",
+    "sourceIPAddress": "198.51.100.25",
+    "errorMessage": "Failed authentication"
+  },
+  {
+    "eventID": "evt-002",
+    "eventTime": "2026-10-29T10:05:00Z",
+    "eventSource": "cloudtrail.amazonaws.com",
+    "eventName": "StopLogging",
+    "sourceIPAddress": "198.51.100.25"
+  },
+  {
+    "eventID": "evt-003",
+    "eventTime": "2026-10-29T10:10:00Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "ListBuckets",
+    "sourceIPAddress": "192.0.2.10"
+  }
+]

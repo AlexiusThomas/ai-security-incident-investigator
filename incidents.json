@@ -1,0 +1,19 @@
+[
+  {
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "event_count": 2,
+    "severity": "HIGH",
+    "start_time": "2026-10-29T10:00:00+00:00",
+    "end_time": "2026-10-29T10:02:00+00:00",
+    "event_ids": [
+      "evt-001",
+      "evt-002"
+    ],
+    "sources": [
+      "aws",
+      "windows"
+    ],
+    "reason": "Related alerts within five minutes"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "investigation_id": "INV-0001",
+    "status": "OPEN",
+    "severity": "HIGH",
+    "summary": "2 correlated events for user admin",
+    "evidence": {
+      "event_ids": [
+        "evt-001",
+        "evt-002"
+      ],
+      "sources": [
+        "aws",
+        "windows"
+      ],
+      "start_time": "2026-10-29T10:00:00+00:00",
+      "end_time": "2026-10-29T10:02:00+00:00",
+      "source_ip": "10.0.1.5",
+      "username": "admin"
+    },
+    "recommended_steps": [
+      "Review the original security events",
+      "Confirm timestamps and source identities",
+      "Check whether the activity was authorized",
+      "Document findings and evidence",
+      "Escalate to an authorized responder if needed"
+    ],
+    "remediation": {
+      "suggested_action": "Review account activity and access",
+      "approval_status": "REQUIRED",
+      "approved_by": null,
+      "executed": false
+    }
+  }
+]

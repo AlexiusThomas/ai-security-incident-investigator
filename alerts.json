@@ -1,0 +1,18 @@
+[
+  {
+    "source": "windows",
+    "event_type": "failed_login",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "HIGH",
+    "reason": "Failed login from monitored IP"
+  },
+  {
+    "source": "aws",
+    "event_type": "failed_login",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "HIGH",
+    "reason": "Failed login from monitored IP"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "source": "windows",
+    "EventID": 4625,
+    "Account": "admin",
+    "IpAddress": "10.0.1.5"
+  },
+  {
+    "source": "aws",
+    "eventName": "ConsoleLogin",
+    "userIdentity": "admin",
+    "sourceIPAddress": "10.0.1.5",
+    "errorMessage": "Failed authentication"
+  }
+]

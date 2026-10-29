@@ -1,0 +1,7 @@
+VPC: 10.0.0.0/16
+Public Subnet: 10.0.1.0/24
+Private Subnet: 10.0.2.0/24
+Public Route: 0.0.0.0/0 -> Internet Gateway
+Private Route: local VPC traffic only
+Web Security Group: Inbound TCP 443 from 0.0.0.0/0
+App Security Group: Inbound TCP 8080 from Web Security Group only

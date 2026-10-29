@@ -1,0 +1,47 @@
+﻿[
+  {
+    "event_id": "evt-001",
+    "timestamp": "2026-10-29T10:00:00Z",
+    "source": "windows",
+    "event_type": "failed_login",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "HIGH"
+  },
+  {
+    "event_id": "evt-002",
+    "timestamp": "2026-10-29T10:02:00Z",
+    "source": "aws",
+    "event_type": "failed_login",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "HIGH"
+  },
+  {
+    "event_id": "evt-003",
+    "timestamp": "2026-10-29T10:12:00Z",
+    "source": "windows",
+    "event_type": "failed_login",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "HIGH"
+  },
+  {
+    "event_id": "evt-004",
+    "timestamp": "2026-10-29T10:03:00Z",
+    "source": "windows",
+    "event_type": "failed_login",
+    "username": "guest",
+    "source_ip": "10.0.1.5",
+    "severity": "MEDIUM"
+  },
+  {
+    "event_id": "evt-005",
+    "timestamp": "2026-10-29T10:04:00Z",
+    "source": "aws",
+    "event_type": "ListBuckets",
+    "username": "admin",
+    "source_ip": "10.0.1.5",
+    "severity": "INFO"
+  }
+]

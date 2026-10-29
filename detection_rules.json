@@ -1,0 +1,11 @@
+
+{
+  "monitored_ips": [
+    "10.0.1.5"
+  ],
+  "severities": {
+    "monitored_failed_login": "HIGH",
+    "failed_login": "MEDIUM",
+    "default": "INFO"
+  }
+}
