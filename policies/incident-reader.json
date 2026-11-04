@@ -1,0 +1,25 @@
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListEvidencePrefix",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::example-security-evidence-bucket",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "incidents/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ReadIncidentEvidence",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example-security-evidence-bucket/incidents/*"
+    }
+  ]
+}
