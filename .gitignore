@@ -8,3 +8,6 @@ __pycache__/
 !.env.example
 .pytest_cache/
 .vscode/
+day18_output/
+day19_output/
+logs/
