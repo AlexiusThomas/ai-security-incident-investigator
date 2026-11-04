@@ -1,0 +1,86 @@
+
+name: Security Checks CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+
+  python-security:
+    name: Python Security Scanning
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Install security scanners
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install bandit pip-audit
+
+      - name: Scan Python source code
+        run: |
+          python -m bandit -q -ll -ii \
+            ai_guardrails.py \
+            ai_summary_pipeline.py \
+            local_security_agent.py \
+            approval_workflow.py \
+            remediation_simulator.py \
+            evidence_store.py \
+            lambda_security_handler.py
+
+      - name: Audit Python dependencies
+        run: |
+          python -m pip_audit -r requirements.txt
+
+  terraform-security:
+    name: Terraform Security Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "1.16.6"
+
+      - name: Build local Lambda package
+        run: |
+          mkdir -p infra/day35/build
+
+          zip -q -j infra/day35/build/security-handler.zip \
+            lambda_security_handler.py \
+            cloudtrail_ingest.py \
+            detection_engine.py \
+            correlate.py \
+            detection_rules.json
+
+      - name: Check Terraform formatting
+        run: |
+          terraform fmt -check -recursive infra/day35
+
+      - name: Initialize Terraform without backend
+        run: |
+          terraform -chdir=infra/day35 init -backend=false -input=false
+
+      - name: Validate Terraform configuration
+        run: |
+          terraform -chdir=infra/day35 validate -no-color
